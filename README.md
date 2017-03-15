@@ -23,9 +23,11 @@ Here's what's in this repo:
 
 ckan-testing-setup.txt
 	- how we set up our ckan instance to run the ckan test suite
-install-extensions.txt
+install-extension.txt
 	- general outline of how to install extensions and test ckan
 ckan-tests-bin
 	- scripts for testing and utility scripts
-version.txt
+versions.txt
 	- versions and locations of ckan and extensions configured in /etc/ckan/default/production.ini
+extensions-installed.txt
+	- what we've installed and notes on how we did it
