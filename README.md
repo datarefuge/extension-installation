@@ -21,13 +21,13 @@ which enable us to run an extension's own tests.
 
 Here's what's in this repo:
 
-ckan-testing-setup.txt
-	- how we set up our ckan instance to run the ckan test suite
-install-extension.txt
-	- general outline of how to install extensions and test ckan
-ckan-tests-bin
-	- scripts for testing and utility scripts
-versions.txt
-	- versions and locations of ckan and extensions configured in /etc/ckan/default/production.ini
-extensions-installed.txt
-	- what we've installed and notes on how we did it
+- ckan-testing-setup.txt
+	how we set up our ckan instance to run the ckan test suite
+- install-extension.txt
+	general outline of how to install extensions and test ckan
+- ckan-tests-bin
+	 scripts for testing and utility scripts
+- versions.txt
+	 versions and locations of ckan and extensions configured in /etc/ckan/default/production.ini
+- extensions-installed.txt
+	 what we've installed and notes on how we did it
