@@ -1,0 +1,19 @@
+List of extensions and how we installed them:
+
+####
+https://github.com/HHS/ckanext-datajson
+
+As root,
+I downloaded the master zip from https://github.com/GSA/ckanext-datajson (commit 177c9d8719964feed341541aae9a4d1009944be5 to be exact) and unzipped it into /root/ckanext-datajson. 
+cd ~/ckanext-datajson
+mv ckanext-datajson-master /usr/lib/ckan/default/src/ckanext-datajson
+And then I followed the instructions on the githup site
+
+
+####
+
+https://github.com/ckan/ckanext-harvest
+
+The instructions here were very good and included tests
+
+

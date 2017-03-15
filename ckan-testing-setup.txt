@@ -1,0 +1,89 @@
+This document covers how we set up the ckan test suite. It is based on this:
+
+http://docs.ckan.org/en/ckan-2.6.0/contributing/test.html
+
+
+####
+# Utility scripts
+####
+See ckan-tests-bin.zip for utility scripts. Put these scripts into the ubuntu user's ~/bin.
+
+
+####
+# Configure test-core.ini
+###
+
+They mention development.ini, but they seem to want to use test-core.ini so
+
+Update /usr/lib/ckan/default/src/ckan/test-core.ini:
+
+sqlalchemy.url to ckan_test
+ckan.datastore.write_url to ckan_test
+ckan.datastore.read_url to datastore_test
+solr_url to the solr dev instance, in our case it's the one in /etc/ckan/default/production.ini
+
+######
+# Install packages we need to run tests
+#####
+
+Need to be root to install packages (well, you could probably do this sudo -H, but moving along...)
+sudo su -
+. /usr/lib/ckan/default/bin/activate
+pip install -r /usr/lib/ckan/default/src/ckan/dev-requirements.txt
+
+Running that gave me a couple 'SyntaxError: invalid syntax' but I ran the command again
+and it seemed happy, so moving on...
+
+#######
+# Create test tables
+#######
+
+To make working with the databases easier (don't have to type passwords) make a
+~.pgppass file
+#hostname:port:database:username:password
+
+There's a script you can use ~/bin/drpsql
+to make connecting to the postgres instances a little easier, eg `drpsql ckan_default` or `drpsql datasotre_default`. If you wanted to
+look around on the database.
+
+then:
+
+createdb --host=your-db --port=your-port --username=ckan_default -O ckan_default ckan_test -E utf-8
+createdb --host=your-db --port=your-port --username=ckan_default -O ckan_default datastore_test -E utf-8
+
+Then
+
+paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/test-core.ini | drpsql ckan_default
+
+This will give you warnings for DB objects that already have the correct permissions, seems fine.
+
+
+
+#####
+# Script to run tests
+####
+
+Scripts in ~/bin/
+
+run-ckan-tests
+run-tests-easy
+
+run-tests-easy calls run-ckan-tests. Use run-tests-easy to run tests like
+
+run-tests-easy output-file.txt
+
+It uses nohup so you can logout and not worry about it.
+
+run-ckan-tests has some tests excluded using the nose -e argument - see comments in run-ckan-tests for why.
+
+If you want to add more tests to the script, you can add them to run-ckan-tests. For example for 
+new extensions you install.
+
+
+
+
+
+
+
+
+

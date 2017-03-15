@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+. /usr/lib/ckan/default/bin/activate
+cd /usr/lib/ckan/default/src/ckan/
+nosetests \
+\
+-e test_select_basic \
+-e test_select_where_like_with_percent \
+-e test_user_read_translation \
+\
+--ckan --with-pylons=test-core.ini --reset-db ckan ckanext
+
+# Notes on commented-out tests
+# ckanext/datastore test from ckan github which don't work
+# -e test_select_basic https://github.com/ckan/ckan/issues/346
+# -e test_select_where_like_with_percent https://github.com/ckan/ckan/issues/3465
+# -e test_user_read_translation \

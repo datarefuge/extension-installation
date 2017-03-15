@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+psql -w \
+   --host=your-db-host \
+   --port=5432 \
+   --username $1 \
+   --dbname=$1

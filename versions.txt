@@ -1,0 +1,16 @@
+Versions and locations of what's installed
+
+ckan 2.6.0
+
+plugins configured in /etc/ckan/default/production.ini
+stats - comes with ckan 
+text_view  - comes with ckan 
+image_view - comes with ckan 
+recline_view - comes with ckan 
+datapusher - comes with ckan 
+recline_grid_view - ?
+recline_graph_view - ?
+recline_map_view - ?
+cloudstorage - /usr/lib/ckan/default/lib/python2.7/site-packages/ckanext_cloudstorage-0.1.0-py2.7.egg
+datarefuge_theme - /usr/lib/ckan/default/lib/python2.7/site-packages/ckanext_datarefuge_theme-0.0.1-py2.7.egg
+extrafields - /usr/lib/ckan/default/lib/python2.7/site-packages/ckanext_extrafields-0.0.1-py2.7.egg

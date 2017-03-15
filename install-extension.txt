@@ -1,0 +1,26 @@
+General notes on installing extensions.
+
+We've been doing everything as root, so run 'sudo su -' first. There's probably better ways using sudo, but with the
+virtual environment it looks to be a little tricky.
+
+Sometimes installation instructions will assume that the extension is already on your machine
+for example https://github.com/HHS/ckanext-datajson just assumes that you've already cloned the code down.
+
+In such instances you can
+
+cd /usr/lib/ckan/default/src
+
+and either get the zip file of the version you want (probably the master) or
+
+git clone https://github.com/HHS/ckanext-datajson.git
+
+And then from there follow the instructions which will include a setup.py
+
+The nicer extensions use pip install -e to get the source code into /usr/lib/ckan/default/src instead of cloning + setup.py.
+
+See the pip install documention for info on 'pip install -e' and setup.py.
+
+IMPORTANT:
+
+If the extension's documentation says it has tests, you should run them after following the installation instructions.
+

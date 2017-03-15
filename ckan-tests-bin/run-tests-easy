@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo -H nohup ~/bin/run-ckan-tests &> $1 &
