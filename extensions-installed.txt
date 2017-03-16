@@ -11,9 +11,26 @@ And then I followed the instructions on the githup site
 
 
 ####
-
 https://github.com/ckan/ckanext-harvest
 
 The instructions here were very good and included tests
+
+#####
+ckanext-composite, ckanext-scheming, and ckanext-repeating
+
+1) Follow the installation instructions to install the extension. General installation instructions:
+
+git clone https://github.com/xxxx/ckanext-yyyy.git
+cd ckanext-yyyy
+python setup.py develop
+pip install -r dev-requirements.txt
+
+OR
+
+pip install -e  git+https://github.com/xxxxx/ckanextyyyyy#egg=ckanext-yyyyy
+
+
+2) Log into the ckan box and follow the instructions to run the test cases.
+
 
 
