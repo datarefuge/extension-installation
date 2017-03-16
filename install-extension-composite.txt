@@ -1,27 +1,16 @@
-The strategy for installing an exention.
+The strategy for installing ckanext-composite, ckanext-scheming, and ckanext-repeating
 
-1) Install the extension. If the extension has it's own tests, follow the instructions to run those. 
+1) Follow the installation instructions to install the extension. General installation instructions:
 
-2) Log into the ckan box and
+git clone https://github.com/xxxx/ckanext-yyyy.git
+cd ckanext-yyyy
+python setup.py develop
+pip install -r dev-requirements.txt
 
-run-tests-easy output-file.txt
+OR
 
-They currently take about 25 minutes to run. Using nohup will allow us to log out
-accidentally or on purpose.
-
-3) Check output-file.txt for errors.
-
-These warnings are okay (apparantly):
-
-usr/lib/ckan/default/local/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py:79: SAWarning: Usage of the 'related attribute set' operation is not\
- currently supported within the execution stage of the flush process. Results may not be consistent.  Consider using alternative event listeners or connection-level operations ins\
-tead.
-  sess._flush_warning("related attribute set")
+pip install -e  git+https://github.com/xxxxx/ckanextyyyyy#egg=ckanext-yyyyy
 
 
-Exception TypeError: TypeError('exceptions must be old-style classes or derived from BaseException, not NoneType',) in <bound method Solr.__del__ of <pysolr.Solr object at 0x7f3a6\
-bb98190>> ignored
+2) Log into the ckan box and follow the instructions to run the test cases.
 
-
-
-4) Log into the site and make sure everything seems okay.
